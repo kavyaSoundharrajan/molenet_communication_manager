@@ -22,10 +22,8 @@ class WiFiMaintenance:
     def __init__(self):
         self.wlan = network.WLAN(network.STA_IF)
         self.last_result = {}
-
-    # ------------------------------------------------------------
+        
     # Basic WiFi helpers
-    # ------------------------------------------------------------
 
     def _ensure_active(self):
         if not self.wlan.active():
@@ -58,9 +56,7 @@ class WiFiMaintenance:
             path
         )
 
-    # ------------------------------------------------------------
     # WiFi scan/connect/disconnect
-    # ------------------------------------------------------------
 
     def scan_for_ssid(self, ssid, retries=3):
         self._ensure_active()
@@ -159,9 +155,7 @@ class WiFiMaintenance:
 
         print("[WiFiMaint] WiFi powered down")
 
-    # ------------------------------------------------------------
     # HTTP helpers
-    # ------------------------------------------------------------
 
     def _http_get_text(self, path):
         if requests is None:
@@ -185,9 +179,7 @@ class WiFiMaintenance:
             print("[WiFiMaint] HTTP GET failed:", e)
             return None
 
-    # ------------------------------------------------------------
     # Runtime config handling
-    # ------------------------------------------------------------
 
     def _save_runtime_config(self, text):
         try:
@@ -240,9 +232,7 @@ class WiFiMaintenance:
             "rejected": rejected
         }
 
-    # ------------------------------------------------------------
     # Firmware manifest check only
-    # ------------------------------------------------------------
 
     def check_firmware_manifest(self):
         text = self._http_get_text(config.FIRMWARE_MANIFEST_PATH)
@@ -276,9 +266,7 @@ class WiFiMaintenance:
             "reason": "manifest_checked"
         }
 
-    # ------------------------------------------------------------
     # Public maintenance runner
-    # ------------------------------------------------------------
 
     def run(self, check_firmware=False):
         result = {
