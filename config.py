@@ -1,23 +1,16 @@
 # config.py — MoleNet Communication Manager Configuration
 VERSION = "5.1.0"
 
-# ============================================================
 # Global mode
-# ============================================================
 
 SIMULATION_MODE = False
 DEBUG_LORA = True
 DEBUG_SIM = False
 
-
-# ============================================================
 # Node identity
-# ============================================================
 
 NODE_ID = 1
 
-
-# ------------------------------------------------------------
 
 ENABLE_DEEPSLEEP = False
 
@@ -34,22 +27,14 @@ FLUSH_MAX_BATCH = 5
 
 WIFI_MAINTENANCE_INTERVAL_CYCLES = 999
 
-# ------------------------------------------------------------
-
-
-
-# ============================================================
 # Embedded wake cycle
-# ============================================================
 
 SENSOR_INTERVAL_SECONDS = 3600
 ENABLE_DEEPSLEEP = False
 DEV_LOOP = False
 
 
-# ============================================================
 # Energy model
-# ============================================================
 
 # Options:
 #   "SIM_FIXED"
@@ -65,9 +50,7 @@ ENERGY_RANDOM_LOW_PROB = 0.25
 ENERGY_RANDOM_CRITICAL_PROB = 0.15
 
 
-# ============================================================
 # Soil moisture model
-# ============================================================
 
 # Options:
 #   "SIM_FIXED"
@@ -99,9 +82,7 @@ SOIL_SCENARIO_EXTREME_DRY_PROB = 0.10
 SOIL_SCENARIO_EXTREME_WET_PROB = 0.15
 
 
-# ============================================================
 # SX1276 / LoRa pins — MoleNet v6.3
-# ============================================================
 
 SPI_ID = 1
 
@@ -114,9 +95,7 @@ PIN_RST = 15
 PIN_DIO0 = 46
 
 
-# ============================================================
 # LoRa PHY settings
-# ============================================================
 
 LORA_FREQ_HZ = 868100000
 LORA_BW = 125000
@@ -128,9 +107,7 @@ LORA_TX_POWER_DBM = 14
 LORA_TX_TIMEOUT_MS = 3000
 LORA_SR_PRIOR = 0.9
 
-# ============================================================
 # LoRa ACK / reliability
-# ============================================================
 
 ACK_WAIT_MS = 6000 #3000 
 
@@ -143,9 +120,7 @@ LORA_HIST_N = 10
 LORA_SR_PRIOR = 0.6
 
 
-# ============================================================
 # WiFi UDP ACK — data communication
-# ============================================================
 
 
 WIFI_SSID = "MERCUSYS_FCF8"
@@ -164,9 +139,7 @@ WIFI_SR_PRIOR = 0.6
 WIFI_FLUSH_MIN_SR = 0.5
 
 
-# ============================================================
 # BLE
-# ============================================================
 
 BLE_ADV_PREFIX = b"MNET"
 BLE_ADV_MAX_PAYLOAD = 20
@@ -176,9 +149,7 @@ BLE_TARGET_NAME = "MoleNet-BLE-RX"
 BLE_ACK_WAIT_MS = 5000
 
 
-# ============================================================
 # SD card / DTN storage
-# ============================================================
 
 SD_MOUNT_POINT = "/sd"
 
@@ -197,18 +168,14 @@ DTN_WARNING_USAGE = 0.85
 #FLUSH_MAX_BATCH = 10
 
 
-# ============================================================
 # Priority levels
-# ============================================================
 
 PRIORITY_NORMAL = "NORMAL"
 PRIORITY_WARNING = "WARNING"
 PRIORITY_CRITICAL = "CRITICAL"
 
 
-# ============================================================
 # Event types
-# ============================================================
 
 EVENT_NONE = "NONE"
 
@@ -224,9 +191,7 @@ EVENT_DTN_ALMOST_FULL = "DTN_ALMOST_FULL"
 EVENT_LINK_FAILURE = "LINK_FAILURE"
 
 
-# ============================================================
 # Two-level architecture naming
-# ============================================================
 
 PATH_NORMAL_FUZZY = "normal_fuzzy_path"
 PATH_DETERMINISTIC_EVENT = "deterministic_event_path"
@@ -250,9 +215,7 @@ EVENT_PATH_DETERMINISTIC_CRITICAL = PATH_DETERMINISTIC_EVENT
 EVENT_PATH_BATTERY_CRITICAL_STORE_ONLY = PATH_DETERMINISTIC_EVENT
 
 
-# ============================================================
 # Energy policies
-# ============================================================
 
 ENERGY_POLICY_FULL_OPERATION = "full_operation"
 ENERGY_POLICY_LOW_WARNING_ONLY = "low_warning_only"
@@ -260,25 +223,19 @@ ENERGY_POLICY_LOW_EMERGENCY_LORA_ONLY = "low_emergency_lora_only"
 ENERGY_POLICY_CRITICAL_STORE_ONLY = "critical_store_only"
 
 
-# ============================================================
 # Priority thresholds
-# ============================================================
 
 MOISTURE_CRITICAL_DRY = 0.20
 MOISTURE_CRITICAL_HIGH = 0.80
 
 
-# ============================================================
 # Fuzzy layer
-# ============================================================
 
 FUZZY_SEND_THRESHOLD = 0.55
 SEND_CONF_THRESHOLD = FUZZY_SEND_THRESHOLD
 
 
-# ============================================================
 # WiFi maintenance / remote configuration update
-# ============================================================
 
 WIFI_MAINTENANCE_ENABLED = True
 #WIFI_MAINTENANCE_INTERVAL_CYCLES = 24
@@ -302,17 +259,13 @@ CONFIG_UPDATE_ALLOWED_KEYS = [
 ]
 
 
-# ============================================================
 # Low battery warning
-# ============================================================
 
 LOW_BATTERY_SEND_WARNING_ONCE = True
 LOW_BATTERY_WARNING_FILE = "/sd/dtn/low_battery_warning_sent.txt"
 
 
-# ============================================================
 # Outcomes
-# ============================================================
 
 OUTCOME_SUCCESS = "success"
 OUTCOME_FAILED = "failed"
@@ -325,9 +278,7 @@ OUTCOME_FLUSH_FAILED = "flush_failed"
 OUTCOME_BLE_ADVERTISED_ONLY = "ble_advertised_only"
 
 
-# ============================================================
 # Energy proxy weights
-# ============================================================
 
 ENERGY_COST_CPU_WAKE = 0.2
 
@@ -342,15 +293,13 @@ ENERGY_COST_BLE_GATT = 0.8
 
 ENERGY_COST_SD_WRITE = 0.1
 
-# ============================================================
 # ANSA
-# ============================================================
+
 ANSA_WIFI_ENABLED = True
 ANSA_WIFI_BACKLOG_THRESHOLD = 0.50
 
-# ============================================================
+
 # Evaluation logging
-# ============================================================
 
 EVAL_LOG_ENABLED = True
 
@@ -364,9 +313,7 @@ EVAL_LOG_DIR = "/sd"
 
 EVAL_OUTPUT_FILE = "cm_functionality.csv"
 
-# ============================================================
 # Evaluation defaults
-# ============================================================
 
 EVAL_SCENARIO = "TEST"
 RUN_ID = 1
