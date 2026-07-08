@@ -17,9 +17,8 @@ class DTNStore:
         mount_sd()
         self._init_file()
 
-    # ------------------------------------------------------------
+
     # File helpers
-    # ------------------------------------------------------------
 
     def _init_file(self):
         try:
@@ -60,9 +59,7 @@ class DTNStore:
             return 0.0
         return self.count() / float(MAX_ITEMS)
 
-    # ------------------------------------------------------------
     # Encoding / decoding
-    # ------------------------------------------------------------
 
     def _encode_entry(self, pkt, seq, meta):
         """
@@ -128,9 +125,7 @@ class DTNStore:
             print("[DTN PARSE ERROR]", e)
             return None
 
-    # ------------------------------------------------------------
     # Queue operations
-    # ------------------------------------------------------------
 
     def enqueue(self, pkt, seq=None, meta=""):
         """
@@ -208,9 +203,8 @@ class DTNStore:
 
         return entry
 
-    # ------------------------------------------------------------
+    
     # Backward-compatible aliases
-    # ------------------------------------------------------------
 
     def peek(self):
         """
