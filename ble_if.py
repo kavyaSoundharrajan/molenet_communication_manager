@@ -70,9 +70,7 @@ class BLEIF:
         self.ack_msg = None
         self.write_done = False
 
-    # ------------------------------------------------------------
     # BLE IRQ handler
-    # ------------------------------------------------------------
 
     def _irq(self, event, data):
 
@@ -165,9 +163,7 @@ class BLEIF:
             self.ack_msg = msg
             print("[BLE NOTIFY]", msg)
 
-    # ------------------------------------------------------------
     # Opportunistic BLE scan
-    # ------------------------------------------------------------
 
     def probe_scan(self, scan_ms):
         self._found = False
@@ -189,9 +185,7 @@ class BLEIF:
 
         return self._found
 
-    # ------------------------------------------------------------
     # Mode 1: BLE advertisement only
-    # ------------------------------------------------------------
 
     def advertise(self, pkt, seq=None, adv_ms=None):
 
@@ -239,9 +233,7 @@ class BLEIF:
         payload += bytes((len(mfg) + 1, 0xFF)) + mfg
         return payload
 
-    # ------------------------------------------------------------
     # Mode 2: Reliable BLE GATT delivery with ACK
-    # ------------------------------------------------------------
 
     def _reset_connection_state(self):
         self.addr_type = None
@@ -353,7 +345,7 @@ class BLEIF:
         self.ack_msg = None
         self.write_done = False
 
-        # Keep payload short for BLE default MTU.
+    
         # For CM packet, we transmit compact metadata plus first payload bytes.
         try:
             pkt_preview = pkt[:8]
