@@ -154,10 +154,10 @@ class ANSALite:
             print("  ANSA: energy CRITICAL -> no flush")
             return "none"
 
-        # --------------------------------------------------------
+    
         # Efficiency policy:
         # high backlog + OK energy -> prefer WiFi for bulk recovery
-        # --------------------------------------------------------
+    
         try:
             import config
 
